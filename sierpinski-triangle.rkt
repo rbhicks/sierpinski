@@ -9,7 +9,7 @@
 ;                (render-triangle dc))]))
 (define canvas(new canvas% [parent frame]))
 (define dc (send canvas get-dc))
-(define blue-pen (make-object pen% "BLUE" 2 'solid))
+(define blue-pen (make-object pen% "BLUE" 0.02 'solid))
 
 (define (generate-triangle-vertex-sequence x-size
                                            y-size
@@ -28,9 +28,7 @@
                 [(apex-y)        (- y-size (* (/ (sqrt 3) 2)
                                               (- x-size
                                                  (* x-size 0.1))))])
-
-    (printf "~a,~a~n" current-x current-y)
-    (if (<= generated-vertex-count amount-to-generate)
+        (if (<= generated-vertex-count amount-to-generate)
         (if (> generated-vertex-count discard-threshold)
              (let* ([vertex          (random 1 4)]
                     [new-vertex-list (cond
@@ -39,8 +37,8 @@
                                                               (/ (+ lower-left-y current-y) 2))
                                                         vertex-list)]
                                        [(eq? vertex 2) (cons
-                                                        (cons(/ (+ lower-right-x current-x) 2)
-                                                             (/ (+ lower-right-y current-y) 2))
+                                                        (cons (/ (+ lower-right-x current-x) 2)
+                                                              (/ (+ lower-right-y current-y) 2))
                                                         vertex-list)]
                                        [(eq? vertex 3) (cons
                                                         (cons (/ (+ apex-x       current-x) 2)
@@ -86,8 +84,8 @@
       y-size
       0
       0
-      300
-      10000
+      1000
+      30000
       0
       '()))))
 
