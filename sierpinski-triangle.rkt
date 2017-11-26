@@ -29,7 +29,7 @@
                                               (- x-size
                                                  (* x-size 0.1))))])
         (if (<= generated-vertex-count amount-to-generate)
-        (if (> generated-vertex-count discard-threshold)
+        (if (>  generated-vertex-count discard-threshold)
              (let* ([vertex          (random 1 4)]
                     [new-vertex-list (cond
                                        [(eq? vertex 1) (cons
