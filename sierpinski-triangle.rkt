@@ -33,16 +33,16 @@
              (let* ([vertex          (random 1 4)]
                     [new-vertex-list (cond
                                        [(eq? vertex 1) (cons
-                                                        (cons (/ (+ lower-left-x current-x) 2)
-                                                              (/ (+ lower-left-y current-y) 2))
+                                                        (cons (/ (+ lower-left-x  current-x) 2)
+                                                              (/ (+ lower-left-y  current-y) 2))
                                                         vertex-list)]
                                        [(eq? vertex 2) (cons
                                                         (cons (/ (+ lower-right-x current-x) 2)
                                                               (/ (+ lower-right-y current-y) 2))
                                                         vertex-list)]
-                                       [(eq? vertex 3) (cons
-                                                        (cons (/ (+ apex-x       current-x) 2)
-                                                              (/ (+ apex-y       current-y) 2))
+                                       [(eq? vertex 3) (cons 
+                                                        (cons (/ (+ apex-x        current-x) 2)
+                                                              (/ (+ apex-y        current-y) 2))
                                                         vertex-list)])])
                (generate-triangle-vertex-sequence
                 x-size
